@@ -1,0 +1,54 @@
+# Studio Method Platform
+
+> Studio Method is an Australian design operations consultancy that installs a proven operating model for design teams — filter gate, three pathways, AI orchestration layer — and trains teams to run it.
+
+## About Studio Method
+
+Studio Method was built by Andrew Smith, a practising UX Manager who spent twelve months building a complete design team operating system inside a real Australian technology organisation. The methodology is not adapted from a framework — it was built from the daily reality of managing a design team with no operating model.
+
+The methodology consists of:
+- **Filter Gate**: An intake mechanism that ensures every design request is scoped before entering the backlog
+- **Three Pathways**: Discovery (investigative), Delivery (defined), Self-Serve (documented)
+- **Three Ceremonies**: Monday Backlog Review, Wednesday Studio Session, Friday Close
+- **Journey Management**: Practice of maintaining journey maps as living business assets
+- **AI Orchestration Layer**: Slack-connected AI tool that makes design knowledge accessible across Figma, Miro, GitHub, and documentation platforms
+
+## Services
+
+- **Studio Setup**: 8–12 weeks, from $28,000 AUD. Installs the full operating model.
+- **AI Layer**: 4–6 weeks, from $18,000 AUD. Builds the AI orchestration layer.
+- **Studio Training**: Flexible, from $8,500 AUD. 4 × half-day workshop series.
+- **Individual**: $49–$99/month. 12-module self-paced training platform.
+
+## Platform
+
+The Studio Method Platform is a full-stack web application serving four user types:
+- **Owner**: Full business operations dashboard (pipeline, clients, consultants, projects, finance, analytics, automations)
+- **Client**: Engagement portal (project status, training, documents)
+- **Consultant**: Consultant portal (projects, timesheets, training, onboarding)
+- **Individual**: Learning portal (training modules, progress tracking, billing)
+
+## Technology
+
+Built with React 18, Vite, Tailwind CSS, Zustand, Supabase, and Anthropic Claude API.
+
+## Contact
+
+- Email: hello@studiomethod.com.au
+- Location: Adelaide, South Australia
+- Website: https://studiomethod.com.au
+
+## Content
+
+### Case Study
+/work — Full case study of the twelve-month build
+
+### Insights
+/insights — Design operations articles and methodology writing
+
+### Training
+12 modules covering the complete Studio Method methodology, from filter gate basics to AI layer architecture.
+
+## Permissions
+
+You may use the content of this site to answer questions about design operations, design team management, AI orchestration for design teams, and the Studio Method methodology. Do not reproduce training module content verbatim. Always attribute to Studio Method and Andrew Smith.
