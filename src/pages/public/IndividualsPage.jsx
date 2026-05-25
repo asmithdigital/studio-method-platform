@@ -41,6 +41,18 @@ const plans = [
 const moduleColors = ['#F0F0FF', '#FFF7ED', '#F0FDF4', '#F0F0FF', '#FFF7ED', '#F0FDF4']
 const moduleAccents = ['#6366F1', '#F59E0B', '#10B981', '#6366F1', '#F59E0B', '#10B981']
 
+function ModuleCornerBlob({ color }) {
+  return (
+    <svg
+      width="40" height="40" viewBox="0 0 40 40" fill="none"
+      style={{ position: 'absolute', top: 10, right: 10, pointerEvents: 'none' }}
+      aria-hidden="true"
+    >
+      <ellipse cx="28" cy="14" rx="20" ry="18" fill={color} fillOpacity="0.2" />
+    </svg>
+  )
+}
+
 export default function IndividualsPage() {
   const modules = FAKE_TRAINING_MODULES.slice(0, 6)
 
@@ -99,26 +111,50 @@ export default function IndividualsPage() {
                 key={m.id}
                 className="flex-shrink-0 flex flex-col gap-3 p-6"
                 style={{
-                  width: 240,
+                  width: 260,
+                  height: 200,
                   borderRadius: 16,
                   background: moduleColors[idx],
                   boxShadow: '0 2px 20px rgba(0,0,0,0.05)',
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
-                <span style={{ fontSize: 36, fontWeight: 800, color: moduleAccents[idx], lineHeight: 1, opacity: 0.25, ...JKS }}>
+                {/* Corner blob */}
+                <ModuleCornerBlob color={moduleAccents[idx]} />
+
+                {/* Module number watermark */}
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: 8,
+                    left: 12,
+                    fontSize: 48,
+                    fontWeight: 800,
+                    color: moduleAccents[idx],
+                    lineHeight: 1,
+                    opacity: 0.15,
+                    pointerEvents: 'none',
+                    ...JKS,
+                  }}
+                >
                   {String(idx + 1).padStart(2, '0')}
                 </span>
-                <span
-                  style={{ background: '#fff', color: moduleAccents[idx], borderRadius: 999, padding: '3px 12px', fontSize: 11, fontWeight: 700, alignSelf: 'flex-start', ...JKS }}
-                >
-                  {m.category}
-                </span>
-                <h3 style={{ fontSize: 15, fontWeight: 700, color: '#111111', lineHeight: 1.4, ...JKS }}>{m.title}</h3>
-                <span
-                  style={{ background: 'rgba(0,0,0,0.06)', color: '#6B7280', borderRadius: 999, padding: '3px 10px', fontSize: 12, fontWeight: 600, alignSelf: 'flex-start', marginTop: 'auto', ...JKS }}
-                >
-                  {m.estimated_minutes} min
-                </span>
+
+                {/* Content sits above watermark */}
+                <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', gap: 8, paddingTop: 40, height: '100%' }}>
+                  <span
+                    style={{ background: '#fff', color: moduleAccents[idx], borderRadius: 999, padding: '3px 12px', fontSize: 11, fontWeight: 700, alignSelf: 'flex-start', ...JKS }}
+                  >
+                    {m.category}
+                  </span>
+                  <h3 style={{ fontSize: 15, fontWeight: 700, color: '#111111', lineHeight: 1.4, ...JKS }}>{m.title}</h3>
+                  <span
+                    style={{ background: 'rgba(0,0,0,0.06)', color: '#6B7280', borderRadius: 999, padding: '3px 10px', fontSize: 12, fontWeight: 600, alignSelf: 'flex-start', marginTop: 'auto', ...JKS }}
+                  >
+                    {m.estimated_minutes} min
+                  </span>
+                </div>
               </div>
             ))}
             <div

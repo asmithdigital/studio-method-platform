@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Filter, GitBranch, Cpu, X } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import PublicLayout from '@/components/layout/PublicLayout'
 import ChatBot from '@/components/ai/ChatBot'
 import { TESTIMONIALS, FAKE_INSIGHTS_ARTICLES } from '@/lib/constants'
+import {
+  IllustrationFilterGate,
+  IllustrationThreePathways,
+  IllustrationStudioCeremonies,
+  IllustrationAILayer,
+} from '@/components/public/Illustrations'
 
 const JKS = { fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }
 
@@ -37,96 +43,249 @@ function FlowDiagram() {
   )
 }
 
-const features = [
+const mosaicCards = [
   {
-    icon: <Filter size={28} style={{ color: '#6366F1' }} />,
+    key: 'filter',
     label: 'Filter Gate',
     body: 'Every request gets assessed before it enters the backlog.',
+    bg: '#F0F0FF',
+    accent: '#6366F1',
+    Illustration: IllustrationFilterGate,
   },
   {
-    icon: <GitBranch size={28} style={{ color: '#F59E0B' }} />,
+    key: 'pathways',
     label: 'Three Pathways',
     body: 'Discovery, Delivery, or Self-serve — each with its own process.',
+    bg: '#fff',
+    accent: '#6366F1',
+    borderTop: '3px solid #6366F1',
+    Illustration: IllustrationThreePathways,
   },
   {
-    icon: <Cpu size={28} style={{ color: '#10B981' }} />,
+    key: 'ceremonies',
+    label: 'Studio Ceremonies',
+    body: 'Rhythm-based rituals that keep the team aligned week to week.',
+    bg: '#FFF7ED',
+    accent: '#F59E0B',
+    Illustration: IllustrationStudioCeremonies,
+  },
+  {
+    key: 'ai',
     label: 'AI Layer',
     body: 'Your tools connected. Your knowledge accessible.',
+    bg: '#F0FDF4',
+    accent: '#10B981',
+    Illustration: IllustrationAILayer,
   },
+]
+
+const stats = [
+  { n: '4', l: 'Services', bg: '#6366F1', color: '#fff' },
+  { n: '12+', l: 'Engagements delivered', bg: '#FFF7ED', color: '#F59E0B' },
+  { n: '97%', l: 'Client satisfaction', bg: '#F0FDF4', color: '#10B981' },
+  { n: '12', l: 'Training modules', bg: '#6366F1', color: '#fff' },
 ]
 
 export default function HomePage() {
   return (
     <PublicLayout>
       {/* HERO */}
-      <section style={{ background: '#FAFAF7', ...JKS }} className="px-6 pt-24 pb-16 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div
-            className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-sm font-semibold"
-            style={{ background: '#F0F0FF', color: '#6366F1' }}
-          >
-            Design Operations Methodology
+      <section style={{ background: '#FAFAF7', ...JKS, position: 'relative', overflow: 'hidden' }} className="px-6 pt-24 pb-16">
+        {/* Background blobs */}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+          <div style={{
+            position: 'absolute', top: '-80px', right: '-80px',
+            width: 600, height: 600, borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%)',
+          }} />
+          <div style={{
+            position: 'absolute', bottom: '-60px', left: '-60px',
+            width: 300, height: 300, borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%)',
+          }} />
+        </div>
+
+        <div className="max-w-6xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            {/* Left column — 60% */}
+            <div style={{ flex: '0 0 60%', maxWidth: '60%' }} className="w-full">
+              <div
+                className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-sm font-semibold"
+                style={{ background: '#F0F0FF', color: '#6366F1' }}
+              >
+                Design Operations Methodology
+              </div>
+              <h1
+                className="mb-6 leading-none tracking-tight"
+                style={{ fontSize: 'clamp(42px, 7vw, 72px)', fontWeight: 800, color: '#111111', ...JKS }}
+              >
+                Design teams that work<br />
+                <span style={{ color: '#6366F1' }}>like studios.</span>
+              </h1>
+              <p
+                className="mb-10 max-w-xl leading-relaxed"
+                style={{ fontSize: 18, color: '#6B7280', ...JKS }}
+              >
+                A methodology for how work comes in, gets prioritised, and gets done.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/for-organisations"
+                  className="inline-flex items-center justify-center gap-2 font-semibold transition-all"
+                  style={{ background: '#6366F1', color: '#fff', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...JKS }}
+                >
+                  See how it works <ArrowRight size={16} />
+                </Link>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center justify-center gap-2 font-semibold transition-all"
+                  style={{ background: 'transparent', color: '#6366F1', border: '2px solid #6366F1', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...JKS }}
+                >
+                  View the method
+                </Link>
+              </div>
+              <FlowDiagram />
+            </div>
+
+            {/* Right column — 40% */}
+            <div style={{ flex: '0 0 40%', maxWidth: '40%', position: 'relative' }} className="w-full hidden md:block">
+              <div style={{
+                position: 'absolute', top: '50%', left: '50%',
+                transform: 'translate(-50%,-50%)',
+                width: 360, height: 360, borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(99,102,241,0.10) 0%, transparent 70%)',
+                pointerEvents: 'none',
+              }} />
+              <IllustrationFilterGate className="w-full h-auto relative" style={{ maxWidth: 380 }} />
+            </div>
           </div>
-          <h1
-            className="mb-6 leading-none tracking-tight"
-            style={{ fontSize: 'clamp(42px, 7vw, 72px)', fontWeight: 800, color: '#111111', ...JKS }}
-          >
-            Design teams that work<br />
-            <span style={{ color: '#6366F1' }}>like studios.</span>
-          </h1>
-          <p
-            className="mx-auto mb-10 max-w-xl leading-relaxed"
-            style={{ fontSize: 18, color: '#6B7280', ...JKS }}
-          >
-            A methodology for how work comes in, gets prioritised, and gets done.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/for-organisations"
-              className="inline-flex items-center justify-center gap-2 font-semibold transition-all"
-              style={{ background: '#6366F1', color: '#fff', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...JKS }}
-            >
-              See how it works <ArrowRight size={16} />
-            </Link>
-            <Link
-              to="/services"
-              className="inline-flex items-center justify-center gap-2 font-semibold transition-all"
-              style={{ background: 'transparent', color: '#6366F1', border: '2px solid #6366F1', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...JKS }}
-            >
-              View the method
-            </Link>
-          </div>
-          <FlowDiagram />
         </div>
       </section>
 
-      {/* FEATURE STRIP */}
+      {/* FEATURE MOSAIC */}
       <section style={{ background: '#FFFFFF', ...JKS }} className="py-20 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
-          {features.map((f) => (
-            <div key={f.label} className="text-center">
-              <div className="flex justify-center mb-5">{f.icon}</div>
-              <h3 className="mb-2" style={{ fontWeight: 700, fontSize: 20, color: '#111111', ...JKS }}>{f.label}</h3>
-              <p style={{ fontSize: 16, color: '#6B7280', lineHeight: 1.7, ...JKS }}>{f.body}</p>
+        <div className="max-w-5xl mx-auto">
+          {/* Row 1: large left (60%) + tall right (40%) */}
+          <div className="flex flex-col md:flex-row gap-5 mb-5">
+            {/* Card 1 — large, lavender */}
+            <div
+              style={{
+                flex: '0 0 calc(60% - 10px)',
+                background: mosaicCards[0].bg,
+                borderRadius: 20,
+                padding: 36,
+                boxShadow: '0 2px 20px rgba(0,0,0,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+              }}
+            >
+              <IllustrationFilterGate className="w-20 h-20" />
+              <h3 style={{ fontWeight: 700, fontSize: 20, color: '#111111', ...JKS }}>{mosaicCards[0].label}</h3>
+              <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, ...JKS }}>{mosaicCards[0].body}</p>
+              <div style={{ width: 32, height: 3, borderRadius: 2, background: mosaicCards[0].accent, marginTop: 4 }} />
             </div>
-          ))}
+
+            {/* Card 2 — tall, white with indigo border-top */}
+            <div
+              style={{
+                flex: '0 0 calc(40% - 10px)',
+                background: mosaicCards[1].bg,
+                borderRadius: 20,
+                borderTop: mosaicCards[1].borderTop,
+                padding: 36,
+                boxShadow: '0 2px 20px rgba(0,0,0,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+              }}
+            >
+              <IllustrationThreePathways className="w-20 h-20" />
+              <h3 style={{ fontWeight: 700, fontSize: 20, color: '#111111', ...JKS }}>{mosaicCards[1].label}</h3>
+              <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, ...JKS }}>{mosaicCards[1].body}</p>
+              <div style={{ width: 32, height: 3, borderRadius: 2, background: mosaicCards[1].accent, marginTop: 4 }} />
+            </div>
+          </div>
+
+          {/* Row 2: tall left (40%) + large right (60%) */}
+          <div className="flex flex-col md:flex-row gap-5">
+            {/* Card 3 — tall, peach */}
+            <div
+              style={{
+                flex: '0 0 calc(40% - 10px)',
+                background: mosaicCards[2].bg,
+                borderRadius: 20,
+                padding: 36,
+                boxShadow: '0 2px 20px rgba(0,0,0,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+              }}
+            >
+              <IllustrationStudioCeremonies className="w-20 h-20" />
+              <h3 style={{ fontWeight: 700, fontSize: 20, color: '#111111', ...JKS }}>{mosaicCards[2].label}</h3>
+              <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, ...JKS }}>{mosaicCards[2].body}</p>
+              <div style={{ width: 32, height: 3, borderRadius: 2, background: mosaicCards[2].accent, marginTop: 4 }} />
+            </div>
+
+            {/* Card 4 — large, mint */}
+            <div
+              style={{
+                flex: '0 0 calc(60% - 10px)',
+                background: mosaicCards[3].bg,
+                borderRadius: 20,
+                padding: 36,
+                boxShadow: '0 2px 20px rgba(0,0,0,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+              }}
+            >
+              <IllustrationAILayer className="w-20 h-20" />
+              <h3 style={{ fontWeight: 700, fontSize: 20, color: '#111111', ...JKS }}>{mosaicCards[3].label}</h3>
+              <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, ...JKS }}>{mosaicCards[3].body}</p>
+              <div style={{ width: 32, height: 3, borderRadius: 2, background: mosaicCards[3].accent, marginTop: 4 }} />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* STATS */}
-      <section style={{ background: '#F0F0FF', ...JKS }} className="py-20 px-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { n: '4', l: 'Services' },
-            { n: '12+', l: 'Engagements delivered' },
-            { n: '97%', l: 'Client satisfaction' },
-            { n: '12', l: 'Training modules' },
-          ].map((s) => (
-            <div key={s.l}>
-              <p style={{ fontSize: 56, fontWeight: 800, color: '#6366F1', lineHeight: 1, ...JKS }}>{s.n}</p>
-              <p style={{ fontSize: 14, color: '#6B7280', marginTop: 8, ...JKS }}>{s.l}</p>
-            </div>
-          ))}
+      <section style={{ background: '#F0F0FF', ...JKS, position: 'relative', overflow: 'hidden' }} className="py-20 px-6">
+        {/* Background blob */}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+          <div style={{
+            position: 'absolute', top: '50%', left: '50%',
+            transform: 'translate(-50%,-50%)',
+            width: 600, height: 600, borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(99,102,241,0.05) 0%, transparent 70%)',
+          }} />
+          <div style={{
+            position: 'absolute', bottom: '-60px', left: '-60px',
+            width: 300, height: 300, borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%)',
+          }} />
+        </div>
+
+        <div className="max-w-4xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="flex flex-wrap justify-center gap-4">
+            {stats.map((s, i) => (
+              <div
+                key={s.l}
+                style={{
+                  background: s.bg,
+                  borderRadius: 999,
+                  padding: i % 2 === 0 ? '28px 40px' : '20px 36px',
+                  textAlign: 'center',
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+                  minWidth: 160,
+                }}
+              >
+                <p style={{ fontSize: 52, fontWeight: 800, color: s.color, lineHeight: 1, ...JKS }}>{s.n}</p>
+                <p style={{ fontSize: 13, color: s.bg === '#6366F1' ? 'rgba(255,255,255,0.75)' : '#6B7280', marginTop: 6, ...JKS }}>{s.l}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -183,20 +342,33 @@ export default function HomePage() {
       <section style={{ background: '#F0F0FF', ...JKS }} className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-center mb-14" style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, color: '#111111', ...JKS }}>
-            From the teams we've worked with
+            From the teams we&apos;ve worked with
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t) => (
               <div
                 key={t.id}
                 className="flex flex-col gap-5 p-8"
-                style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 20px rgba(0,0,0,0.06)' }}
+                style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 20px rgba(0,0,0,0.06)', position: 'relative', overflow: 'hidden' }}
               >
-                <span style={{ fontSize: 56, lineHeight: 1, color: '#6366F1', fontFamily: 'Georgia, serif', fontWeight: 700 }}>"</span>
-                <p style={{ fontSize: 17, color: '#111111', lineHeight: 1.7, marginTop: -24, ...JKS }}>
-                  {t.quote}
-                </p>
-                <div className="mt-auto pt-4" style={{ borderTop: '1px solid #e5e7eb' }}>
+                {/* Large decorative quote mark */}
+                <svg
+                  aria-hidden="true"
+                  style={{ position: 'absolute', top: 8, left: 12, pointerEvents: 'none', zIndex: 0 }}
+                  width="72" height="72" viewBox="0 0 72 72"
+                >
+                  <text
+                    x="0" y="68"
+                    style={{ fontSize: '120px', fontFamily: 'Georgia, serif', fill: '#6366F1', opacity: 0.08, fontWeight: 700, lineHeight: 1 }}
+                  >&ldquo;</text>
+                </svg>
+
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <p style={{ fontSize: 17, color: '#111111', lineHeight: 1.7, ...JKS }}>
+                    {t.quote}
+                  </p>
+                </div>
+                <div className="mt-auto pt-4" style={{ borderTop: '1px solid #e5e7eb', position: 'relative', zIndex: 1 }}>
                   <p style={{ fontWeight: 700, color: '#111111', ...JKS }}>{t.name}</p>
                   <p style={{ fontSize: 14, color: '#6B7280', ...JKS }}>{t.role}, {t.company}</p>
                 </div>
@@ -245,13 +417,26 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: '#6366F1', ...JKS }} className="py-24 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
+      <section style={{ background: '#6366F1', ...JKS, position: 'relative', overflow: 'hidden' }} className="py-24 px-6 text-center">
+        {/* Background blobs */}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+          <div style={{
+            position: 'absolute', top: '-80px', right: '-80px',
+            width: 600, height: 600, borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)',
+          }} />
+          <div style={{
+            position: 'absolute', bottom: '-60px', left: '-60px',
+            width: 300, height: 300, borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%)',
+          }} />
+        </div>
+        <div className="max-w-2xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
           <h2 className="mb-6" style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, color: '#fff', lineHeight: 1.2, ...JKS }}>
             Ready to change how your team works?
           </h2>
           <p className="mb-10" style={{ fontSize: 18, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, ...JKS }}>
-            Book a 45-minute discovery call. We will look at your team's current state.
+            Book a 45-minute discovery call. We will look at your team&apos;s current state.
           </p>
           <Link
             to="/contact"

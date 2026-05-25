@@ -1,18 +1,24 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Settings, Cpu, BookOpen, User } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import PublicLayout from '@/components/layout/PublicLayout'
 import { SERVICES } from '@/lib/constants'
+import {
+  IllustrationFilterGate,
+  IllustrationAILayer,
+  IllustrationModuleLibrary,
+  IllustrationDesignSystem,
+} from '@/components/public/Illustrations'
 
 const JKS = { fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }
 
 const sectionBgs = ['#F0F0FF', '#FFF7ED', '#F0FDF4', '#F0F0FF']
 const accentColors = ['#6366F1', '#F59E0B', '#10B981', '#6366F1']
 
-const serviceIcons = [
-  <Settings size={48} strokeWidth={1.5} />,
-  <Cpu size={48} strokeWidth={1.5} />,
-  <BookOpen size={48} strokeWidth={1.5} />,
-  <User size={48} strokeWidth={1.5} />,
+const serviceIllustrations = [
+  <IllustrationFilterGate key="filter" className="w-full h-full" />,
+  <IllustrationAILayer key="ai" className="w-full h-full" />,
+  <IllustrationModuleLibrary key="library" className="w-full h-full" />,
+  <IllustrationDesignSystem key="system" className="w-full h-full" />,
 ]
 
 export default function ServicesPage() {
@@ -80,12 +86,16 @@ export default function ServicesPage() {
                 </Link>
               </div>
 
-              {/* ICON SIDE */}
+              {/* ILLUSTRATION SIDE */}
               <div
                 className="flex-shrink-0 flex items-center justify-center"
-                style={{ width: 220, height: 220, borderRadius: 32, background: '#fff', boxShadow: '0 2px 40px rgba(0,0,0,0.07)', color: accent }}
+                style={{
+                  width: 280,
+                  height: 280,
+                  filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.08))',
+                }}
               >
-                {serviceIcons[i]}
+                {serviceIllustrations[i]}
               </div>
             </div>
           </section>
