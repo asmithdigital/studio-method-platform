@@ -20,12 +20,22 @@ export default {
         rose: '#C45A5A',
         muted: '#7A7670',
         white: '#FFFFFF',
+        // Public redesign palette
+        warm: '#FAFAF7',
+        lavender: '#F0F0FF',
+        peach: '#FFF7ED',
+        mint: '#F0FDF4',
+        indigo: '#6366F1',
+        'indigo-light': '#818CF8',
+        amber: '#F59E0B',
+        emerald: '#10B981',
       },
       fontFamily: {
         display: ['Playfair Display', 'Georgia', 'serif'],
         body: ['Instrument Sans', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
         sans: ['Instrument Sans', 'system-ui', 'sans-serif'],
+        jakarta: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         fadeUp: {

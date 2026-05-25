@@ -1,162 +1,178 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle2, Building2 } from 'lucide-react'
+import { ArrowRight, X as XIcon } from 'lucide-react'
 import PublicLayout from '@/components/layout/PublicLayout'
-import ServiceCard from '@/components/ui/ServiceCard'
-import TestimonialCard from '@/components/ui/TestimonialCard'
-import { SERVICES, TESTIMONIALS } from '@/lib/constants'
+import { TESTIMONIALS } from '@/lib/constants'
 
-const orgServices = SERVICES.filter(s => ['studio_setup', 'ai_layer', 'training'].includes(s.id))
+const JKS = { fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }
 
 const symptoms = [
-  'Designers are constantly busy but never feel like they are finishing things',
-  'Requests come in through every channel — Slack, email, Jira, hallway conversations',
-  'Work starts without a clear scope and ends without a clear definition of done',
-  'Senior designers are leaving because there is no structure or progression',
-  'The backlog is a wishlist that no one believes in',
-  'Research gets done, presented, and never referenced again',
-  'Nobody knows what anyone else in the team is working on',
-  'The design system exists but nobody uses it consistently',
+  'Work comes in from everywhere.',
+  'Nobody knows what\'s in flight.',
+  'Research gets skipped to ship faster.',
 ]
 
 const process = [
-  { step: '01', title: 'Discovery call', body: 'A 45-minute conversation where we look at your team\'s current situation honestly. We tell you what we see and whether Studio Method is the right fit. No pitch — just assessment.' },
-  { step: '02', title: 'Team assessment', body: 'We spend time with your team — interviews, observation, backlog review. We produce a written current state assessment that describes what is happening and why.' },
-  { step: '03', title: 'Model design', body: 'We design the Studio Method operating model for your specific context: filter gate, pathways, ceremonies, documentation. Adapted, not generic.' },
-  { step: '04', title: 'Implementation', body: 'We install the model. Ceremonies running, filter gate operational, team trained. We are there for the first six weeks of implementation.' },
-  { step: '05', title: 'Handover', body: 'We hand over a documented, sustainable system. The team knows how to run it without us. We include a 90-day check-in.' },
+  { step: '01', title: 'Discovery call', body: 'A 45-minute conversation where we look at your team\'s current situation honestly.' },
+  { step: '02', title: 'Team assessment', body: 'Interviews, observation, backlog review. A written current state that describes what is happening and why.' },
+  { step: '03', title: 'Model design', body: 'We design the Studio Method operating model for your specific context — adapted, not generic.' },
+  { step: '04', title: 'Implementation', body: 'We install the model. Ceremonies running, filter gate operational, team trained.' },
+  { step: '05', title: 'Handover', body: 'A documented, sustainable system. The team knows how to run it. We include a 90-day check-in.' },
 ]
 
 export default function ForOrganisationsPage() {
   return (
     <PublicLayout>
-      {/* Hero */}
-      <section className="py-28 px-6 bg-navy text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 dot-grid opacity-30" />
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 mb-6">
-            <Building2 size={16} className="text-gold" />
-            <span className="text-white/80 text-sm font-medium">For organisations with design teams</span>
+      {/* HERO */}
+      <section style={{ background: '#FAFAF7', ...JKS }} className="py-28 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <div
+            className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-sm font-semibold"
+            style={{ background: '#F0F0FF', color: '#6366F1' }}
+          >
+            For Organisations
           </div>
-          <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Your design team is talented.<br />
-            <span style={{ color: '#C4964A' }}>The system is broken.</span>
+          <h1 className="mb-6" style={{ fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 800, color: '#111111', lineHeight: 1.1, ...JKS }}>
+            Your design team,<br />
+            <span style={{ color: '#6366F1' }}>operating like a studio.</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-            Studio Method installs the operating model that transforms a reactive, individual-working team into a functioning studio. Filter gate, three pathways, AI orchestration layer, ceremonies — the full system.
+          <p style={{ fontSize: 18, color: '#6B7280', lineHeight: 1.7, maxWidth: 500, margin: '0 auto 36px', ...JKS }}>
+            Studio Method installs the operating model that transforms a reactive team into a functioning studio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="btn-gold text-base px-8 py-4 rounded-xl">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 font-semibold transition-all"
+              style={{ background: '#6366F1', color: '#fff', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...JKS }}
+            >
               Book a discovery call <ArrowRight size={16} />
             </Link>
-            <Link to="/work" className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium border border-white/20 text-white rounded-xl hover:bg-white/10 transition-colors">
-              See the case study
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center gap-2 font-semibold transition-all"
+              style={{ background: 'transparent', color: '#6366F1', border: '2px solid #6366F1', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...JKS }}
+            >
+              View services
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Symptoms */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-3">Does this sound familiar?</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink">The symptoms of a team without an operating model</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-3">
+      {/* SYMPTOMS */}
+      <section style={{ background: '#fff', ...JKS }} className="py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-center mb-14" style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, color: '#111111', ...JKS }}>
+            Does this sound familiar?
+          </h2>
+          <div className="flex flex-col gap-5">
             {symptoms.map((s) => (
-              <div key={s} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border">
-                <div className="w-2 h-2 rounded-full bg-rose mt-2 flex-shrink-0" />
-                <p className="text-sm text-muted leading-relaxed">{s}</p>
+              <div
+                key={s}
+                className="flex items-center gap-5 p-6"
+                style={{ background: '#FFF7ED', borderRadius: 16 }}
+              >
+                <div
+                  className="flex items-center justify-center flex-shrink-0"
+                  style={{ width: 40, height: 40, borderRadius: 999, background: '#FECACA' }}
+                >
+                  <XIcon size={18} style={{ color: '#ef4444' }} />
+                </div>
+                <p style={{ fontSize: 20, fontWeight: 700, color: '#111111', ...JKS }}>{s}</p>
               </div>
             ))}
           </div>
-          <div className="mt-10 p-6 rounded-2xl bg-navy text-white text-center">
-            <p className="font-display text-lg font-semibold mb-2">These are system problems, not people problems.</p>
-            <p className="text-white/60 text-sm">Adding more designers to a broken system makes the system bigger, not better. The fix is the operating model.</p>
+          <div
+            className="mt-8 p-6 rounded-2xl text-center"
+            style={{ background: '#6366F1' }}
+          >
+            <p style={{ fontSize: 17, fontWeight: 700, color: '#fff', ...JKS }}>These are system problems, not people problems.</p>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginTop: 6, ...JKS }}>The fix is the operating model.</p>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-20 px-6 bg-surface">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-3">Our services</p>
-            <h2 className="font-display text-3xl font-bold text-ink mb-4">Three ways to work with us</h2>
-            <p className="text-muted max-w-xl mx-auto">Each service is available independently or combined. Most organisations start with Studio Setup and add the AI Layer in a second engagement.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {orgServices.map((s) => <ServiceCard key={s.id} service={s} />)}
-          </div>
-          <div className="text-center mt-8">
-            <Link to="/pricing" className="inline-flex items-center gap-2 text-gold font-medium hover:gap-3 transition-all">
-              See full pricing <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-3">How it works</p>
-            <h2 className="font-display text-3xl font-bold text-ink">Five steps from first call to running system</h2>
-          </div>
-          <div className="space-y-0">
-            {process.map((p, idx) => (
-              <div key={p.step} className={`flex gap-6 md:gap-10 py-8 ${idx < process.length - 1 ? 'border-b border-border' : ''}`}>
-                <div className="flex-shrink-0">
-                  <span className="font-display text-4xl font-bold text-border">{p.step}</span>
-                </div>
-                <div>
-                  <h3 className="font-display text-xl font-bold text-ink mb-2">{p.title}</h3>
-                  <p className="text-muted leading-relaxed">{p.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who it is for */}
-      <section className="py-20 px-6 bg-surface">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-4">Best fit</p>
-            <h2 className="font-display text-3xl font-bold text-ink mb-6">Studio Method works best for teams that are already good</h2>
-            <p className="text-muted leading-relaxed mb-6">
-              We are not a team turnaround service. Studio Method works when you have talented designers who are working in reactive, unstructured ways because the system around them does not support better work. The methodology installs the structure that releases the talent.
-            </p>
-            <p className="text-muted leading-relaxed mb-8">
-              We have delivered engagements for teams of 4 to 20 designers, across fintech, health, software, and media. The methodology adapts to context — the principles do not change.
-            </p>
-            <div className="space-y-2">
-              {['Design teams of 4–20 people', 'Teams with confirmed budget and timeline', 'Organisations that want sustainable change, not a one-time fix', 'Teams with a design lead or manager who is bought in'].map((f) => (
-                <div key={f} className="flex items-center gap-2 text-sm text-muted">
-                  <CheckCircle2 size={15} className="text-jade flex-shrink-0" />
-                  {f}
+      {/* PROCESS TIMELINE */}
+      <section style={{ background: '#FAFAF7', ...JKS }} className="py-24 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-center mb-16" style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, color: '#111111', ...JKS }}>
+            Five steps from first call to running system
+          </h2>
+          <div className="relative">
+            {/* Vertical line */}
+            <div style={{ position: 'absolute', left: 28, top: 0, bottom: 0, width: 2, background: '#e5e7eb' }} />
+            <div className="space-y-0">
+              {process.map((p, idx) => (
+                <div key={p.step} className="flex gap-8 pb-10 relative">
+                  {/* Number circle */}
+                  <div
+                    className="flex items-center justify-center flex-shrink-0 relative z-10"
+                    style={{
+                      width: 56,
+                      height: 56,
+                      borderRadius: 999,
+                      background: idx === 0 ? '#6366F1' : '#fff',
+                      border: '2px solid',
+                      borderColor: idx === 0 ? '#6366F1' : '#e5e7eb',
+                      color: idx === 0 ? '#fff' : '#6366F1',
+                      fontSize: 15,
+                      fontWeight: 800,
+                      ...JKS,
+                    }}
+                  >
+                    {p.step}
+                  </div>
+                  <div style={{ paddingTop: 12, flex: 1 }}>
+                    <h3 style={{ fontSize: 20, fontWeight: 700, color: '#111111', marginBottom: 6, ...JKS }}>{p.title}</h3>
+                    <p style={{ fontSize: 16, color: '#6B7280', lineHeight: 1.7, ...JKS }}>{p.body}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="space-y-4">
-            {TESTIMONIALS.map((t) => <TestimonialCard key={t.id} testimonial={t} />)}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section style={{ background: '#F0F0FF', ...JKS }} className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-center mb-12" style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: '#111111', ...JKS }}>
+            From the teams we've worked with
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((t) => (
+              <div
+                key={t.id}
+                className="flex flex-col gap-4 p-7"
+                style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 20px rgba(0,0,0,0.06)' }}
+              >
+                <span style={{ fontSize: 48, color: '#6366F1', lineHeight: 1, fontFamily: 'Georgia, serif', fontWeight: 700 }}>"</span>
+                <p style={{ fontSize: 15, color: '#111111', lineHeight: 1.7, marginTop: -20, ...JKS }}>{t.quote}</p>
+                <div className="mt-auto pt-4" style={{ borderTop: '1px solid #e5e7eb' }}>
+                  <p style={{ fontWeight: 700, color: '#111111', ...JKS }}>{t.name}</p>
+                  <p style={{ fontSize: 13, color: '#6B7280', ...JKS }}>{t.role}, {t.company}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-navy text-white text-center">
+      <section style={{ background: '#6366F1', ...JKS }} className="py-24 px-6 text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">Let's look at your team together</h2>
-          <p className="text-white/60 text-lg mb-10 leading-relaxed">
-            Book a 45-minute discovery call. We look at your team's current state together and tell you honestly whether Studio Method is the right fit. No sales pitch.
+          <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, color: '#fff', marginBottom: 12, lineHeight: 1.2, ...JKS }}>
+            Let's look at your team together
+          </h2>
+          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.75)', marginBottom: 36, lineHeight: 1.7, ...JKS }}>
+            Book a 45-minute discovery call. No sales pitch — just an honest assessment.
           </p>
-          <Link to="/contact" className="btn-gold text-base px-10 py-4 rounded-xl inline-flex items-center gap-2">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 font-semibold transition-all"
+            style={{ background: '#fff', color: '#6366F1', borderRadius: 999, padding: '16px 36px', fontSize: 16, ...JKS }}
+          >
             Book a discovery call <ArrowRight size={16} />
           </Link>
-          <p className="text-white/30 text-sm mt-4">Responses within one business day</p>
+          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginTop: 16, ...JKS }}>Responses within one business day</p>
         </div>
       </section>
     </PublicLayout>

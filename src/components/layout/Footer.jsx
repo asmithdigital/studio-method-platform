@@ -8,8 +8,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <p className="font-display text-white text-lg font-bold mb-3">Studio Method</p>
             <p className="text-sm leading-relaxed text-white/50 max-w-xs">
-              Design operations consultancy helping teams build operational maturity and AI-ready infrastructure.
-              Founded by Andrew Smith. Based in Adelaide, Australia.
+              A design operations methodology for how work comes in, gets prioritised, and gets done. Based in Adelaide, Australia.
             </p>
           </div>
           <div>
