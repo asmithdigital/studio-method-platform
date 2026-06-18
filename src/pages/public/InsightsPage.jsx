@@ -29,10 +29,10 @@ export default function InsightsPage() {
           >
             Insights
           </div>
-          <h1 className="mb-6" style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.1, ...SGF }}>
+          <h1 className="mb-6" style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.1, ...SGF }}>
             From the Studio Method blog
           </h1>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, ...SGF }}>
+          <p style={{ fontSize: 20, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, ...SGF }}>
             Practical writing on design operations, team management, and AI tooling.
           </p>
         </div>
@@ -51,10 +51,10 @@ export default function InsightsPage() {
                 style={{
                   padding: '8px 20px',
                   borderRadius: 999,
-                  fontSize: 14,
+                  fontSize: 15,
                   border: filter === c.value ? 'none' : '1.5px solid rgba(255,255,255,0.08)',
                   background: filter === c.value ? '#C7F24D' : '#111111',
-                  color: filter === c.value ? '#0A0A0A' : 'rgba(255,255,255,0.5)',
+                  color: filter === c.value ? '#0A0A0A' : 'rgba(255,255,255,0.7)',
                   cursor: 'pointer',
                   ...SGF,
                 }}
@@ -77,7 +77,7 @@ export default function InsightsPage() {
                   border: '1px solid rgba(255,255,255,0.08)',
                   textDecoration: 'none',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.transform = 'translateY(0)' }}
               >
                 <span
@@ -85,15 +85,15 @@ export default function InsightsPage() {
                 >
                   {a.category.replace('_', ' ')}
                 </span>
-                <h2 style={{ fontSize: 20, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.35, ...SGF }}>
+                <h2 style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.35, ...SGF }}>
                   {a.title}
                 </h2>
-                <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, ...SGF }} className="line-clamp-2">
+                <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, ...SGF }} className="line-clamp-2">
                   {a.excerpt}
                 </p>
-                <div className="flex items-center gap-2 mt-auto" style={{ color: 'rgba(255,255,255,0.2)' }}>
+                <div className="flex items-center gap-2 mt-auto" style={{ color: 'rgba(255,255,255,0.4)' }}>
                   <Clock size={13} />
-                  <span style={{ fontSize: 13, ...SGF }}>{a.read_time_minutes} min read</span>
+                  <span style={{ fontSize: 14, ...SGF }}>{a.read_time_minutes} min read</span>
                 </div>
               </Link>
             ))}
@@ -104,17 +104,17 @@ export default function InsightsPage() {
       {/* EMAIL SIGNUP */}
       <section style={{ background: '#111111', ...SGF }} className="py-20 px-6 text-center">
         <div className="max-w-lg mx-auto">
-          <h2 style={{ fontSize: 28, fontWeight: 700, color: '#FFFFFF', marginBottom: 8, ...SGF }}>Get new articles by email</h2>
-          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 24, ...SGF }}>No marketing. Just the articles, when they are published.</p>
+          <h2 style={{ fontSize: 30, fontWeight: 700, color: '#FFFFFF', marginBottom: 8, ...SGF }}>Get new articles by email</h2>
+          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', marginBottom: 24, ...SGF }}>No marketing. Just the articles, when they are published.</p>
           <form className="flex gap-2 max-w-sm mx-auto">
             <input
               type="email"
               placeholder="your@email.com"
-              style={{ flex: 1, padding: '12px 16px', borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)', fontSize: 15, outline: 'none', background: '#1A1A1A', color: '#FFFFFF', ...SGF }}
+              style={{ flex: 1, padding: '12px 16px', borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)', fontSize: 17, outline: 'none', background: '#1A1A1A', color: '#FFFFFF', ...SGF }}
             />
             <button
               type="submit"
-              style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 12, padding: '12px 20px', fontWeight: 600, fontSize: 15, border: 'none', cursor: 'pointer', ...SGF }}
+              style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 12, padding: '12px 20px', fontWeight: 600, fontSize: 17, border: 'none', cursor: 'pointer', ...SGF }}
             >
               Subscribe
             </button>

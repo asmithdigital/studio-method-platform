@@ -19,7 +19,6 @@ const plans = [
     ],
     cta: 'Start learning',
     featured: false,
-    accent: '#C7F24D',
   },
   {
     name: 'Individual Pro',
@@ -34,7 +33,6 @@ const plans = [
     ],
     cta: 'Start with Pro',
     featured: true,
-    accent: '#C7F24D',
   },
 ]
 
@@ -57,25 +55,25 @@ export default function IndividualsPage() {
           >
             For Individual Designers &amp; Managers
           </div>
-          <h1 className="mb-6" style={{ fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.1, ...SGF }}>
+          <h1 className="mb-6" style={{ fontSize: 'clamp(40px, 5vw, 72px)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.1, ...SGF }}>
             Learn the method.<br />
             <span style={{ color: '#C7F24D' }}>Apply it this week.</span>
           </h1>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: 480, margin: '0 auto 32px', ...SGF }}>
+          <p style={{ fontSize: 20, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, maxWidth: 480, margin: '0 auto 32px', ...SGF }}>
             Twelve modules. The complete Studio Method. Self-paced, immediately applicable.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/signup"
               className="inline-flex items-center justify-center gap-2 font-semibold transition-all"
-              style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...SGF }}
+              style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 999, padding: '14px 28px', fontSize: 17, ...SGF }}
             >
               Start learning <ArrowRight size={16} />
             </Link>
             <Link
               to="/pricing"
               className="inline-flex items-center justify-center gap-2 font-semibold transition-all"
-              style={{ background: 'transparent', color: '#FFFFFF', border: '1.5px solid rgba(255,255,255,0.15)', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...SGF }}
+              style={{ background: 'transparent', color: '#FFFFFF', border: '1.5px solid rgba(255,255,255,0.3)', borderRadius: 999, padding: '14px 28px', fontSize: 17, ...SGF }}
             >
               See pricing
             </Link>
@@ -86,10 +84,10 @@ export default function IndividualsPage() {
       {/* MODULE HORIZONTAL SCROLL */}
       <section style={{ background: '#111111', ...SGF }} className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="mb-3 text-center" style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700, color: '#FFFFFF', ...SGF }}>
+          <h2 className="mb-3 text-center" style={{ fontSize: 'clamp(26px, 3vw, 44px)', fontWeight: 700, color: '#FFFFFF', ...SGF }}>
             12 modules. The complete methodology.
           </h2>
-          <p className="text-center mb-10" style={{ fontSize: 16, color: 'rgba(255,255,255,0.4)', ...SGF }}>
+          <p className="text-center mb-10" style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', ...SGF }}>
             Scroll to preview the first six modules →
           </p>
           <div
@@ -101,8 +99,8 @@ export default function IndividualsPage() {
                 key={m.id}
                 className="flex-shrink-0 flex flex-col gap-3 p-6"
                 style={{
-                  width: 260,
-                  height: 200,
+                  width: 270,
+                  height: 210,
                   borderRadius: 16,
                   background: moduleColors[idx],
                   border: '1px solid rgba(255,255,255,0.08)',
@@ -132,9 +130,9 @@ export default function IndividualsPage() {
                   >
                     {m.category}
                   </span>
-                  <h3 style={{ fontSize: 15, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.4, ...SGF }}>{m.title}</h3>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.4, ...SGF }}>{m.title}</h3>
                   <span
-                    style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.4)', borderRadius: 999, padding: '3px 10px', fontSize: 12, fontWeight: 600, alignSelf: 'flex-start', marginTop: 'auto', ...SGF }}
+                    style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.7)', borderRadius: 999, padding: '3px 10px', fontSize: 13, fontWeight: 600, alignSelf: 'flex-start', marginTop: 'auto', ...SGF }}
                   >
                     {m.estimated_minutes} min
                   </span>
@@ -143,9 +141,9 @@ export default function IndividualsPage() {
             ))}
             <div
               className="flex-shrink-0 flex items-center justify-center"
-              style={{ width: 200, borderRadius: 16, background: '#1A1A1A', border: '1px solid rgba(255,255,255,0.08)', padding: '24px 20px' }}
+              style={{ width: 210, borderRadius: 16, background: '#1A1A1A', border: '1px solid rgba(255,255,255,0.08)', padding: '24px 20px' }}
             >
-              <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.4)', fontWeight: 600, textAlign: 'center', lineHeight: 1.5, ...SGF }}>
+              <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', fontWeight: 600, textAlign: 'center', lineHeight: 1.5, ...SGF }}>
                 + 6 more modules on AI layer, design system governance, performance &amp; more
               </p>
             </div>
@@ -156,7 +154,7 @@ export default function IndividualsPage() {
       {/* PRICING */}
       <section style={{ background: '#0A0A0A', ...SGF }} className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-center mb-14" style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 700, color: '#FFFFFF', ...SGF }}>
+          <h2 className="text-center mb-14" style={{ fontSize: 'clamp(30px, 4vw, 44px)', fontWeight: 700, color: '#FFFFFF', ...SGF }}>
             Simple, transparent plans
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -177,35 +175,35 @@ export default function IndividualsPage() {
                     Most popular
                   </span>
                 )}
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: '#FFFFFF', marginBottom: 4, ...SGF }}>
+                <h3 style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', marginBottom: 4, ...SGF }}>
                   {plan.name}
                 </h3>
-                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', marginBottom: 20, ...SGF }}>
+                <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.7)', marginBottom: 20, ...SGF }}>
                   {plan.description}
                 </p>
                 <div className="flex items-end gap-1 mb-6">
                   <span style={{ fontSize: 52, fontWeight: 800, color: '#C7F24D', lineHeight: 1, ...SGF }}>{plan.price}</span>
-                  <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.3)', marginBottom: 6, ...SGF }}>{plan.period}</span>
+                  <span style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 6, ...SGF }}>{plan.period}</span>
                 </div>
                 <div className="space-y-3 mb-8">
                   {plan.features.map((f) => (
                     <div key={f} className="flex items-center gap-3">
                       <CheckCircle2 size={16} style={{ color: '#C7F24D', flexShrink: 0 }} />
-                      <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', ...SGF }}>{f}</span>
+                      <span style={{ fontSize: 16, color: 'rgba(255,255,255,0.8)', ...SGF }}>{f}</span>
                     </div>
                   ))}
                 </div>
                 <Link
                   to="/signup"
                   className="block text-center font-semibold transition-all"
-                  style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 100, padding: '14px', fontSize: 15, ...SGF }}
+                  style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 100, padding: '14px', fontSize: 16, ...SGF }}
                 >
                   {plan.cta}
                 </Link>
               </div>
             ))}
           </div>
-          <p className="text-center mt-6" style={{ fontSize: 14, color: 'rgba(255,255,255,0.2)', ...SGF }}>
+          <p className="text-center mt-6" style={{ fontSize: 15, color: 'rgba(255,255,255,0.4)', ...SGF }}>
             Cancel any time. Lifetime access to completed modules.
           </p>
         </div>
@@ -214,14 +212,14 @@ export default function IndividualsPage() {
       {/* CTA */}
       <section style={{ background: '#111111', ...SGF }} className="py-20 px-6 text-center">
         <div className="max-w-lg mx-auto">
-          <h2 style={{ fontSize: 32, fontWeight: 700, color: '#FFFFFF', marginBottom: 12, ...SGF }}>Start with Module 1 — free</h2>
-          <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.5)', marginBottom: 32, lineHeight: 1.7, ...SGF }}>
+          <h2 style={{ fontSize: 34, fontWeight: 700, color: '#FFFFFF', marginBottom: 12, ...SGF }}>Start with Module 1 — free</h2>
+          <p style={{ fontSize: 20, color: 'rgba(255,255,255,0.7)', marginBottom: 32, lineHeight: 1.7, ...SGF }}>
             The first module is free for all registered users. Create an account today.
           </p>
           <Link
             to="/signup"
             className="inline-flex items-center gap-2 font-semibold transition-all"
-            style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...SGF }}
+            style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 999, padding: '14px 28px', fontSize: 17, ...SGF }}
           >
             Create free account <ArrowRight size={16} />
           </Link>

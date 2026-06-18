@@ -45,22 +45,22 @@ export default function WorkPage() {
       {/* Hero */}
       <section style={{ padding: '96px 24px', background: '#0A0A0A', ...SGF }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
-          <Link to="/insights" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'rgba(255,255,255,0.3)', fontSize: 14, textDecoration: 'none', marginBottom: 32, ...SGF }}>
+          <Link to="/insights" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'rgba(255,255,255,0.5)', fontSize: 15, textDecoration: 'none', marginBottom: 32, ...SGF }}>
             <ArrowLeft size={14} /> Back
           </Link>
-          <p style={{ color: '#C7F24D', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 16, fontFamily: 'JetBrains Mono, monospace' }}>Case Study</p>
-          <h1 style={{ fontSize: 'clamp(36px, 5vw, 60px)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 24, ...SGF }}>
+          <p style={{ color: '#C7F24D', fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 16, fontFamily: 'JetBrains Mono, monospace' }}>Case Study</p>
+          <h1 style={{ fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 24, ...SGF }}>
             Twelve months. One manager.<br />
             <span style={{ color: '#C7F24D' }}>A complete design team operating system.</span>
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 18, maxWidth: 640, lineHeight: 1.7, marginBottom: 48, ...SGF }}>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 20, maxWidth: 640, lineHeight: 1.7, marginBottom: 48, ...SGF }}>
             How a practising UX Manager built the filter gate, three pathways, journey management practice, and AI orchestration layer inside a real Australian organisation — using only prompts.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
             {stats.map((s) => (
               <div key={s.l} style={{ borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)', background: '#111111', padding: 20 }}>
-                <p style={{ fontSize: 32, fontWeight: 800, color: '#C7F24D', marginBottom: 4, ...SGF }}>{s.n}</p>
-                <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 13, lineHeight: 1.4, ...SGF }}>{s.l}</p>
+                <p style={{ fontSize: 34, fontWeight: 800, color: '#C7F24D', marginBottom: 4, ...SGF }}>{s.n}</p>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15, lineHeight: 1.4, ...SGF }}>{s.l}</p>
               </div>
             ))}
           </div>
@@ -69,7 +69,7 @@ export default function WorkPage() {
 
       {/* Context bar */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: '#111111' }}>
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '20px 24px', display: 'flex', flexWrap: 'wrap', gap: 32, fontSize: 14, color: 'rgba(255,255,255,0.4)', ...SGF }}>
+        <div style={{ maxWidth: 960, margin: '0 auto', padding: '20px 24px', display: 'flex', flexWrap: 'wrap', gap: 32, fontSize: 15, color: 'rgba(255,255,255,0.6)', ...SGF }}>
           <div><span style={{ fontWeight: 600, color: '#FFFFFF' }}>Author</span> — Andrew Smith, Founder</div>
           <div><span style={{ fontWeight: 600, color: '#FFFFFF' }}>Duration</span> — 12 months</div>
           <div><span style={{ fontWeight: 600, color: '#FFFFFF' }}>Team size</span> — 11 designers</div>
@@ -83,10 +83,10 @@ export default function WorkPage() {
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           {/* Introduction */}
           <div style={{ marginBottom: 64, maxWidth: 720 }}>
-            <p style={{ fontSize: 20, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: 24, ...SGF }}>
+            <p style={{ fontSize: 22, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: 24, ...SGF }}>
               This is the case study that became Studio Method. It is a first-person account of building a complete design team operating system from inside a real organisation — not from theory, not from consulting engagements, from twelve months of daily iteration on a team that needed to work better.
             </p>
-            <p style={{ fontSize: 20, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, ...SGF }}>
+            <p style={{ fontSize: 22, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, ...SGF }}>
               It is written as a chronological narrative because the order matters. The filter gate came before the operating model because you need to control intake before you can control throughput. The operating model came before the AI layer because the AI layer amplifies whatever system it is connected to — and you need to build the system first.
             </p>
           </div>
@@ -99,9 +99,9 @@ export default function WorkPage() {
                   <span style={{ display: 'inline-block', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#C7F24D', background: 'rgba(199,242,77,0.08)', padding: '6px 12px', borderRadius: 999, fontFamily: 'JetBrains Mono, monospace' }}>{section.period}</span>
                 </div>
                 <div>
-                  <h2 style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 800, color: '#FFFFFF', marginBottom: 24, letterSpacing: '-0.01em', ...SGF }}>{section.title}</h2>
+                  <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 800, color: '#FFFFFF', marginBottom: 24, letterSpacing: '-0.01em', ...SGF }}>{section.title}</h2>
                   {section.content.split('\n\n').map((para, i) => (
-                    <p key={i} style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: 16, fontSize: 16, ...SGF }}>{para}</p>
+                    <p key={i} style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, marginBottom: 18, fontSize: 18, ...SGF }}>{para}</p>
                   ))}
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function WorkPage() {
 
           {/* Key learnings */}
           <div style={{ marginTop: 64, padding: 48, borderRadius: 20, background: '#111111', border: '1px solid rgba(199,242,77,0.15)' }}>
-            <h2 style={{ fontSize: 24, fontWeight: 700, color: '#FFFFFF', marginBottom: 32, ...SGF }}>What this case study means for your team</h2>
+            <h2 style={{ fontSize: 26, fontWeight: 700, color: '#FFFFFF', marginBottom: 32, ...SGF }}>What this case study means for your team</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
               {[
                 { n: '1', t: 'The operating model precedes the AI layer', b: 'Every time. The AI layer amplifies whatever system it connects to. A well-structured studio gets exponentially more value from AI than a reactive one.' },
@@ -118,10 +118,10 @@ export default function WorkPage() {
                 { n: '3', t: 'Prompts are a legitimate build tool', b: 'Every piece of infrastructure in this case study was built using Claude. Not as a shortcut — as a genuine capability multiplier for a non-technical practitioner.' },
               ].map((l) => (
                 <div key={l.n} style={{ display: 'flex', gap: 16 }}>
-                  <span style={{ fontSize: 32, fontWeight: 800, color: '#C7F24D', flexShrink: 0, lineHeight: 1, ...SGF }}>{l.n}</span>
+                  <span style={{ fontSize: 34, fontWeight: 800, color: '#C7F24D', flexShrink: 0, lineHeight: 1, ...SGF }}>{l.n}</span>
                   <div>
-                    <p style={{ fontWeight: 600, color: '#FFFFFF', marginBottom: 8, ...SGF }}>{l.t}</p>
-                    <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14, lineHeight: 1.6, ...SGF }}>{l.b}</p>
+                    <p style={{ fontWeight: 600, color: '#FFFFFF', marginBottom: 8, fontSize: 17, ...SGF }}>{l.t}</p>
+                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 16, lineHeight: 1.6, ...SGF }}>{l.b}</p>
                   </div>
                 </div>
               ))}
@@ -134,15 +134,15 @@ export default function WorkPage() {
       <section style={{ padding: '96px 24px', background: '#111111', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <div style={{ maxWidth: 640, margin: '0 auto' }}>
           <p style={{ color: '#C7F24D', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 16, fontFamily: 'JetBrains Mono, monospace' }}>What's next</p>
-          <h2 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 800, color: '#FFFFFF', marginBottom: 16, ...SGF }}>Ready to build this for your team?</h2>
-          <p style={{ color: 'rgba(255,255,255,0.5)', marginBottom: 40, lineHeight: 1.7, fontSize: 17, ...SGF }}>
+          <h2 style={{ fontSize: 'clamp(30px, 4vw, 44px)', fontWeight: 800, color: '#FFFFFF', marginBottom: 16, ...SGF }}>Ready to build this for your team?</h2>
+          <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 40, lineHeight: 1.7, fontSize: 20, ...SGF }}>
             Studio Method is now available as a consultancy service, a training programme, and an individual learning platform. Every element of the methodology described above can be installed in your organisation.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact" style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 100, padding: '14px 32px', fontWeight: 600, fontSize: 16, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, ...SGF }}>
+            <Link to="/contact" style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 100, padding: '14px 32px', fontWeight: 600, fontSize: 17, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, ...SGF }}>
               Talk to us <ArrowRight size={15} />
             </Link>
-            <Link to="/services" style={{ background: 'transparent', color: '#FFFFFF', border: '1.5px solid rgba(255,255,255,0.15)', borderRadius: 100, padding: '14px 32px', fontWeight: 600, fontSize: 16, textDecoration: 'none', ...SGF }}>
+            <Link to="/services" style={{ background: 'transparent', color: '#FFFFFF', border: '1.5px solid rgba(255,255,255,0.3)', borderRadius: 100, padding: '14px 32px', fontWeight: 600, fontSize: 17, textDecoration: 'none', ...SGF }}>
               See all services
             </Link>
           </div>
