@@ -134,16 +134,16 @@ export default function WorkPage() {
       <section style={{ padding: '96px 24px', background: '#111111', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <div style={{ maxWidth: 640, margin: '0 auto' }}>
           <p style={{ color: '#C7F24D', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 16, fontFamily: 'JetBrains Mono, monospace' }}>What's next</p>
-          <h2 style={{ fontSize: 'clamp(30px, 4vw, 44px)', fontWeight: 800, color: '#FFFFFF', marginBottom: 16, ...SGF }}>Ready to build this for your team?</h2>
+          <h2 style={{ fontSize: 'clamp(30px, 4vw, 44px)', fontWeight: 800, color: '#FFFFFF', marginBottom: 16, ...SGF }}>Explore the full methodology</h2>
           <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 40, lineHeight: 1.7, fontSize: 20, ...SGF }}>
-            Studio Method is now available as a consultancy service, a training programme, and an individual learning platform. Every element of the methodology described above can be installed in your organisation.
+            Everything documented here is available as a playbook. The full methodology — filter gate, operating model, ceremonies, AI layer — documented for teams to implement themselves.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact" style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 100, padding: '14px 32px', fontWeight: 600, fontSize: 17, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, ...SGF }}>
-              Talk to us <ArrowRight size={15} />
+            <Link to="/services" style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 100, padding: '14px 32px', fontWeight: 600, fontSize: 17, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, ...SGF }}>
+              Read the playbook <ArrowRight size={15} />
             </Link>
-            <Link to="/services" style={{ background: 'transparent', color: '#FFFFFF', border: '1.5px solid rgba(255,255,255,0.3)', borderRadius: 100, padding: '14px 32px', fontWeight: 600, fontSize: 17, textDecoration: 'none', ...SGF }}>
-              See all services
+            <Link to="/insights" style={{ background: 'transparent', color: '#FFFFFF', border: '1.5px solid rgba(255,255,255,0.3)', borderRadius: 100, padding: '14px 32px', fontWeight: 600, fontSize: 17, textDecoration: 'none', ...SGF }}>
+              Back to insights
             </Link>
           </div>
         </div>

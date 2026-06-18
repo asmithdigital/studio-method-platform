@@ -5,14 +5,11 @@ import { useAuthStore } from '@/store/authStore'
 // Public
 import HomePage from '@/pages/public/HomePage'
 import ServicesPage from '@/pages/public/ServicesPage'
-import PricingPage from '@/pages/public/PricingPage'
 import AboutPage from '@/pages/public/AboutPage'
 import InsightsPage from '@/pages/public/InsightsPage'
 import InsightArticlePage from '@/pages/public/InsightArticlePage'
 import ContactPage from '@/pages/public/ContactPage'
 import WorkPage from '@/pages/public/WorkPage'
-import ForOrganisationsPage from '@/pages/public/ForOrganisationsPage'
-import IndividualsPage from '@/pages/public/IndividualsPage'
 
 // Auth
 import LoginPage from '@/pages/auth/LoginPage'
@@ -78,14 +75,11 @@ export default function App() {
       {/* Public */}
       <Route path="/" element={<HomePage />} />
       <Route path="/services" element={<ServicesPage />} />
-      <Route path="/pricing" element={<PricingPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/insights" element={<InsightsPage />} />
       <Route path="/insights/:slug" element={<InsightArticlePage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/work" element={<WorkPage />} />
-      <Route path="/for-organisations" element={<ForOrganisationsPage />} />
-      <Route path="/for-individuals" element={<IndividualsPage />} />
 
       {/* Auth */}
       <Route path="/login" element={<LoginPage />} />

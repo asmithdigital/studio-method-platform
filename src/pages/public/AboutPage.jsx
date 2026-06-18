@@ -2,9 +2,11 @@ import { useEffect } from 'react'
 import PublicLayout from '@/components/layout/PublicLayout'
 import { useReveal, CountUp, CtaBand } from '@/components/public/SharedComponents'
 
+const TEAM_COLLAB = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80'
+
 const BELIEFS = [
-  { n: '01', t: 'Honesty over comfort.', d: 'The methodology tells you what is not working before telling you what to do instead.' },
-  { n: '02', t: 'Systems over personalities.', d: 'Built to outlast any individual. If the team cannot run it without help, the job is not done.' },
+  { n: '01', t: 'Honesty over comfort.', d: 'We tell you what is not working before telling you what to do instead.' },
+  { n: '02', t: 'Systems over personalities.', d: 'We build to outlast any individual. If the team cannot run it without us, the job is not done.' },
   { n: '03', t: 'Done is better than perfect.', d: 'A running filter gate with rough edges delivers more value than a perfect process document nobody uses.' },
 ]
 
@@ -14,81 +16,86 @@ export default function AboutPage() {
 
   return (
     <PublicLayout>
-      <section className="page-hero" data-screen-label="About hero">
-        <div className="wrap">
-          <span className="eyebrow reveal"><span className="sq"></span>About</span>
-          <h1 className="ph-title reveal d1">Built inside a real team.<br /><em>Refined</em> over twelve months.</h1>
-          <p className="ph-sub reveal d2">Studio Method is a design operations methodology that came from doing, not theorising.</p>
-        </div>
-      </section>
-
-      <section className="about-statement" data-screen-label="About statement">
-        <div className="wrap">
-          <p className="as-big reveal">
-            Not borrowed from a book. <em>Every element was built because a specific problem existed in a real design team.</em>
+      {/* Hero */}
+      <section className="dark-section dark-section--dark">
+        <div className="dark-section__inner">
+          <div className="dark-hero__eyebrow reveal">About</div>
+          <h1 className="dark-hero__title reveal" style={{ fontSize: 'clamp(40px, 6vw, 72px)', marginBottom: 24 }}>
+            Built inside a real team.<br /><em>Refined</em> over twelve months.
+          </h1>
+          <p className="dark-hero__sub reveal" style={{ marginBottom: 0 }}>
+            Studio Method is a design operations methodology that came from doing, not theorising.
           </p>
-          <div className="about-body">
-            <div className="ab-label reveal">/ origin</div>
-            <div className="ab-text reveal d1">
-              <p>The filter gate came first — because requests were arriving with no scope and no priority. The three pathways came next — because treating all design work the same was causing chaos.</p>
-              <p>The AI layer came last — because connecting tools manually was taking too long and knowledge kept evaporating between projects.</p>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section className="section tight dark" data-screen-label="About stats">
-        <div className="wrap">
-          <div className="stats reveal" style={{ borderColor: 'var(--line-d)' }}>
-            <div className="stat" style={{ borderColor: 'var(--line-d)' }}>
-              <div className="s-num" style={{ color: 'var(--paper)' }}><CountUp end={12} /></div>
-              <div className="s-lab" style={{ color: 'var(--muted-d)' }}>Months of iteration</div>
+      {/* Origin editorial row */}
+      <div className="dark-section dark-section--dark2">
+        <div className="dark-section__inner">
+          <div className="editorial-row reveal">
+            <div className="editorial-row__text">
+              <div className="editorial-row__eyebrow">Origin</div>
+              <h2 className="editorial-row__title">Not borrowed from a book.</h2>
+              <p className="editorial-row__body">
+                We started where most design teams start — drowning in unscoped requests, running standups that solved nothing, and losing institutional knowledge every time someone left. Over twelve months, we built something different. Not a framework borrowed from a blog post. A real operating system, tested in production sprints, with real stakeholders pushing back.
+              </p>
             </div>
-            <div className="stat" style={{ borderColor: 'var(--line-d)' }}>
-              <div className="s-num" style={{ color: 'var(--paper)' }}><CountUp end={3} /></div>
-              <div className="s-lab" style={{ color: 'var(--muted-d)' }}>Core system components</div>
-            </div>
-            <div className="stat" style={{ borderColor: 'var(--line-d)' }}>
-              <div className="s-num" style={{ color: 'var(--paper)' }}><CountUp end={4} suffix="+" /></div>
-              <div className="s-lab" style={{ color: 'var(--muted-d)' }}>Tools connected</div>
-            </div>
-            <div className="stat" style={{ borderColor: 'var(--line-d)' }}>
-              <div className="s-num" style={{ color: 'var(--paper)' }}><CountUp end={0} /></div>
-              <div className="s-lab" style={{ color: 'var(--muted-d)' }}>Borrowed frameworks</div>
+            <div className="editorial-row__image">
+              <img src={TEAM_COLLAB} alt="Team collaborating" loading="lazy" />
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="section" data-screen-label="Beliefs">
-        <div className="wrap">
-          <div className="sec-head">
-            <div>
-              <span className="eyebrow reveal"><span className="sq"></span>Principles</span>
-              <h2 className="h-title reveal d1">What we believe.</h2>
+      {/* Stats */}
+      <div className="dark-section dark-section--dark3">
+        <div className="dark-section__inner">
+          <div className="stats-row reveal">
+            <div className="stat-block">
+              <div className="stat-block__number"><CountUp end={12} /></div>
+              <div className="stat-block__label">months</div>
             </div>
-            <p className="h-sub reveal d2">Three convictions that shape every engagement — and occasionally make us harder to hire than the alternative.</p>
+            <div className="stat-block">
+              <div className="stat-block__number"><CountUp end={3} /></div>
+              <div className="stat-block__label">core systems</div>
+            </div>
+            <div className="stat-block">
+              <div className="stat-block__number"><CountUp end={4} suffix="+" /></div>
+              <div className="stat-block__label">tools connected</div>
+            </div>
+            <div className="stat-block">
+              <div className="stat-block__number"><CountUp end={0} /></div>
+              <div className="stat-block__label">borrowed frameworks</div>
+            </div>
           </div>
-          <div className="beliefs reveal">
+        </div>
+      </div>
+
+      {/* Beliefs */}
+      <div className="dark-section dark-section--dark">
+        <div className="dark-section__inner">
+          <div style={{ marginBottom: 56 }}>
+            <div className="section-eyebrow reveal">Principles</div>
+            <h2 className="section-title reveal">What we believe.</h2>
+            <p className="section-body reveal">Three convictions that shape every engagement — and occasionally make us harder to hire than the alternative.</p>
+          </div>
+          <div className="feature-list">
             {BELIEFS.map((b) => (
-              <div className="belief" key={b.n}>
-                <span className="b-n">{b.n}</span>
-                <div>
-                  <h3 className="b-t">{b.t}</h3>
-                  <p className="b-d">{b.d}</p>
-                </div>
+              <div key={b.n} className="feature-item reveal">
+                <div className="feature-item__number">{b.n}</div>
+                <div className="feature-item__title">{b.t}</div>
+                <div className="feature-item__body">{b.d}</div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       <CtaBand
-        kicker="Work with us"
-        title="Start with a<br/><em>discovery</em> call."
-        sub="We'll look at your team's situation honestly — and tell you if Studio Method isn't the right fit."
-        btn="Book a call"
-        ghost="01"
+        title="See how it all fits together."
+        subtitle="Four systems. One methodology. Built in twelve months."
+        buttonText="See the playbook"
+        buttonTo="/services"
       />
     </PublicLayout>
   )

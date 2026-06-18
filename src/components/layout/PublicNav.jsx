@@ -14,10 +14,9 @@ export default function PublicNav() {
   }, [])
 
   const links = [
-    { to: '/services', label: 'Services' },
+    { to: '/services', label: 'Method' },
     { to: '/about', label: 'About' },
     { to: '/insights', label: 'Insights' },
-    { to: '/pricing', label: 'Pricing' },
   ]
 
   return (
@@ -44,11 +43,8 @@ export default function PublicNav() {
         </div>
 
         <div className="dark-nav__cta-wrap" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <Link to="/login" style={{ fontSize: 15, color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontWeight: 500 }}>
-            Log in
-          </Link>
-          <Link to="/contact" className="dark-nav__cta">
-            Book a call
+          <Link to="/services" className="dark-nav__cta">
+            See the playbook
           </Link>
         </div>
 
@@ -73,12 +69,12 @@ export default function PublicNav() {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/services"
             className="mobile-menu__link"
             onClick={() => setMobileOpen(false)}
             style={{ color: '#C7F24D', borderBottom: 'none', marginTop: 16 }}
           >
-            Book a call →
+            See the playbook →
           </Link>
         </div>
       )}

@@ -67,11 +67,11 @@ export default function HomePage() {
             A methodology for how work comes in, gets prioritised, and gets done. Built inside a real team. Refined over twelve months.
           </p>
           <div className="dark-hero__actions reveal">
-            <Link to="/for-organisations" className="btn-lime">
+            <Link to="/services" className="btn-lime">
               See how it works <Arrow />
             </Link>
-            <Link to="/services" className="btn-outline">
-              View services
+            <Link to="/about" className="btn-outline">
+              About the method
             </Link>
           </div>
         </div>
@@ -116,10 +116,10 @@ export default function HomePage() {
               <div className="editorial-row__eyebrow">Built from experience</div>
               <h2 className="editorial-row__title">Not borrowed from a book.</h2>
               <p className="editorial-row__body">
-                Studio Method was built inside a real Australian organisation over twelve months of daily iteration. Every element exists because a specific problem existed — the filter gate, the three pathways, the ceremonies, the AI layer. Nothing was imported from theory.
+                This methodology was built inside a real Australian organisation over twelve months. Every element was tested in production sprints with real designers, real stakeholders, and real deadlines. Nothing here is theoretical.
               </p>
-              <Link to="/about" className="btn-outline" style={{ display: 'inline-flex', marginTop: 0 }}>
-                Read the story
+              <Link to="/services" className="btn-outline" style={{ display: 'inline-flex', marginTop: 0 }}>
+                Read the playbook →
               </Link>
             </div>
             <div className="editorial-row__image">
@@ -137,10 +137,10 @@ export default function HomePage() {
               <div className="editorial-row__eyebrow">AI-augmented</div>
               <h2 className="editorial-row__title">Your tools connected. Your knowledge accessible.</h2>
               <p className="editorial-row__body">
-                The AI Orchestration Layer connects your Figma library, Miro journey maps, GitHub documentation, and Slack into a single queryable knowledge base. Ask anything in Slack, get answers from your design system in seconds.
+                The AI Orchestration Layer connects your Figma library, Miro boards, GitHub documentation, and Slack channels into a single queryable knowledge base. Ask a question, get an answer from your own team's work — in seconds.
               </p>
               <Link to="/services" className="btn-outline" style={{ display: 'inline-flex' }}>
-                See the AI layer
+                Read the playbook →
               </Link>
             </div>
             <div className="editorial-row__image">
@@ -156,15 +156,15 @@ export default function HomePage() {
           <div className="stats-row reveal">
             <div className="stat-block">
               <div className="stat-block__number"><CountUp end={12} /></div>
-              <div className="stat-block__label">months of iteration</div>
+              <div className="stat-block__label">months building this</div>
             </div>
             <div className="stat-block">
-              <div className="stat-block__number"><CountUp end={4} /></div>
-              <div className="stat-block__label">organisations deployed</div>
+              <div className="stat-block__number"><CountUp end={3} /></div>
+              <div className="stat-block__label">core systems</div>
             </div>
             <div className="stat-block">
-              <div className="stat-block__number"><CountUp end={97} suffix="%" /></div>
-              <div className="stat-block__label">client satisfaction</div>
+              <div className="stat-block__number"><CountUp end={4} suffix="+" /></div>
+              <div className="stat-block__label">tools connected</div>
             </div>
             <div className="stat-block">
               <div className="stat-block__number"><CountUp end={40} suffix="+" /></div>
@@ -179,7 +179,7 @@ export default function HomePage() {
         <div className="dark-section__inner">
           <div style={{ marginBottom: 48 }}>
             <div className="section-eyebrow reveal">Evidence</div>
-            <h2 className="section-title reveal">From the teams we've worked with</h2>
+            <h2 className="section-title reveal">What the team says</h2>
           </div>
           <div className="testimonial-grid">
             {TESTIMONIALS.map((t) => (
@@ -197,7 +197,7 @@ export default function HomePage() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 48, flexWrap: 'wrap', gap: 16 }}>
             <div>
               <div className="section-eyebrow reveal">Insights</div>
-              <h2 className="section-title reveal" style={{ marginBottom: 0 }}>Latest thinking</h2>
+              <h2 className="section-title reveal" style={{ marginBottom: 0 }}>What we learned along the way</h2>
             </div>
             <Link to="/insights" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontSize: 16, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
               All articles →
@@ -222,10 +222,10 @@ export default function HomePage() {
 
       {/* ── CTA ── */}
       <CtaBand
-        title="Ready to change how your team works?"
-        subtitle="Book a 45-minute discovery call. We'll look at your team honestly."
-        buttonText="Book a call"
-        buttonTo="/contact"
+        title="Ready to see the full process?"
+        subtitle="Four systems. Twelve months of iteration. Everything documented."
+        buttonText="Read the playbook"
+        buttonTo="/services"
       />
     </PublicLayout>
   )
