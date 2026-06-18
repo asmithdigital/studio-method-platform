@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import PublicLayout from '@/components/layout/PublicLayout'
 
-const JKS = { fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }
+const JKS = { fontFamily: '"Schibsted Grotesk", system-ui, sans-serif' }
 
 const pricingCards = [
   {
@@ -12,7 +12,7 @@ const pricingCards = [
     description: 'The full Studio Method operating model installed in your team.',
     cta: 'Book a call',
     to: '/contact',
-    accent: '#6366F1',
+    accent: '#16150F',
     bg: '#F0F0FF',
   },
   {
@@ -68,14 +68,14 @@ function FAQItem({ item }) {
         className="w-full flex items-center justify-between py-5 text-left"
         style={{ background: 'none', border: 'none', cursor: 'pointer' }}
       >
-        <span style={{ fontSize: 16, fontWeight: 600, color: '#111111', ...JKS }}>{item.q}</span>
+        <span style={{ fontSize: 16, fontWeight: 600, color: '#16150F', ...JKS }}>{item.q}</span>
         <ChevronDown
           size={18}
-          style={{ color: '#6B7280', flexShrink: 0, transform: open ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}
+          style={{ color: '#6E6A5C', flexShrink: 0, transform: open ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}
         />
       </button>
       {open && (
-        <div style={{ paddingBottom: 20, fontSize: 15, color: '#6B7280', lineHeight: 1.7, ...JKS }}>
+        <div style={{ paddingBottom: 20, fontSize: 15, color: '#6E6A5C', lineHeight: 1.7, ...JKS }}>
           {item.a}
         </div>
       )}
@@ -87,31 +87,31 @@ export default function PricingPage() {
   return (
     <PublicLayout>
       {/* HERO */}
-      <section style={{ background: '#FAFAF7', ...JKS }} className="py-24 px-6 text-center">
+      <section style={{ background: '#F2EFE6', ...JKS }} className="py-24 px-6 text-center">
         <div className="max-w-2xl mx-auto">
           <div
             className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-sm font-semibold"
-            style={{ background: '#F0F0FF', color: '#6366F1' }}
+            style={{ background: '#F0F0FF', color: '#16150F' }}
           >
             Pricing
           </div>
-          <h1 className="mb-4" style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 800, color: '#111111', lineHeight: 1.1, ...JKS }}>
+          <h1 className="mb-4" style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 800, color: '#16150F', lineHeight: 1.1, ...JKS }}>
             Simple, transparent pricing
           </h1>
-          <p style={{ fontSize: 18, color: '#6B7280', lineHeight: 1.7, ...JKS }}>
+          <p style={{ fontSize: 18, color: '#6E6A5C', lineHeight: 1.7, ...JKS }}>
             All pricing in AUD. No retainers, no lock-in.
           </p>
         </div>
       </section>
 
       {/* THREE CARDS */}
-      <section style={{ background: '#FAFAF7', ...JKS }} className="py-16 px-6">
+      <section style={{ background: '#F2EFE6', ...JKS }} className="py-16 px-6">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {pricingCards.map((card) => (
             <div
               key={card.name}
               style={{
-                background: card.featured ? '#111111' : '#fff',
+                background: card.featured ? '#16150F' : '#fff',
                 borderRadius: 20,
                 padding: '36px 28px',
                 boxShadow: card.featured ? '0 12px 48px rgba(0,0,0,0.18)' : '0 2px 20px rgba(0,0,0,0.06)',
@@ -130,10 +130,10 @@ export default function PricingPage() {
               <div
                 style={{ width: 44, height: 44, borderRadius: 12, background: card.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}
               />
-              <h3 style={{ fontSize: 20, fontWeight: 700, color: card.featured ? '#fff' : '#111111', marginBottom: 8, ...JKS }}>
+              <h3 style={{ fontSize: 20, fontWeight: 700, color: card.featured ? '#fff' : '#16150F', marginBottom: 8, ...JKS }}>
                 {card.name}
               </h3>
-              <p style={{ fontSize: 14, color: card.featured ? 'rgba(255,255,255,0.6)' : '#6B7280', marginBottom: 24, lineHeight: 1.6, ...JKS }}>
+              <p style={{ fontSize: 14, color: card.featured ? 'rgba(255,255,255,0.6)' : '#6E6A5C', marginBottom: 24, lineHeight: 1.6, ...JKS }}>
                 {card.description}
               </p>
               <p style={{ fontSize: 36, fontWeight: 800, color: card.accent, marginBottom: 28, lineHeight: 1, ...JKS }}>
@@ -150,14 +150,14 @@ export default function PricingPage() {
           ))}
         </div>
         <p className="text-center mt-8" style={{ fontSize: 14, color: '#9ca3af', ...JKS }}>
-          Not sure which service is right? <Link to="/contact" style={{ color: '#6366F1', fontWeight: 600 }}>Book a call</Link> — we will tell you honestly.
+          Not sure which service is right? <Link to="/contact" style={{ color: '#16150F', fontWeight: 600 }}>Book a call</Link> — we will tell you honestly.
         </p>
       </section>
 
       {/* FAQ */}
       <section style={{ background: '#fff', ...JKS }} className="py-20 px-6">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-center mb-12" style={{ fontSize: 32, fontWeight: 700, color: '#111111', ...JKS }}>
+          <h2 className="text-center mb-12" style={{ fontSize: 32, fontWeight: 700, color: '#16150F', ...JKS }}>
             Frequently asked questions
           </h2>
           <div>
@@ -171,14 +171,14 @@ export default function PricingPage() {
       {/* CTA */}
       <section style={{ background: '#F0F0FF', ...JKS }} className="py-20 px-6 text-center">
         <div className="max-w-xl mx-auto">
-          <h2 style={{ fontSize: 32, fontWeight: 700, color: '#111111', marginBottom: 12, ...JKS }}>Not sure where to start?</h2>
-          <p style={{ fontSize: 17, color: '#6B7280', marginBottom: 32, lineHeight: 1.7, ...JKS }}>
+          <h2 style={{ fontSize: 32, fontWeight: 700, color: '#16150F', marginBottom: 12, ...JKS }}>Not sure where to start?</h2>
+          <p style={{ fontSize: 17, color: '#6E6A5C', marginBottom: 32, lineHeight: 1.7, ...JKS }}>
             Book a call. We will tell you honestly which service is the right fit.
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 font-semibold transition-all"
-            style={{ background: '#6366F1', color: '#fff', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...JKS }}
+            style={{ background: '#16150F', color: '#fff', borderRadius: 999, padding: '14px 28px', fontSize: 16, ...JKS }}
           >
             Book a discovery call <ArrowRight size={15} />
           </Link>

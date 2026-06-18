@@ -29,6 +29,10 @@ export default {
         'indigo-light': '#818CF8',
         amber: '#F59E0B',
         emerald: '#10B981',
+        paper: '#F2EFE6',
+        'paper-2': '#EAE6D9',
+        lime: '#C7F24D',
+        'lime-deep': '#A9D62E',
       },
       fontFamily: {
         display: ['Playfair Display', 'Georgia', 'serif'],
