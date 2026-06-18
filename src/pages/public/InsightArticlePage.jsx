@@ -1,12 +1,17 @@
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import PublicLayout from '@/components/layout/PublicLayout'
-import ArticleCard from '@/components/ui/ArticleCard'
-import Badge from '@/components/ui/Badge'
 import { FAKE_INSIGHTS_ARTICLES } from '@/lib/constants'
 import { formatDate } from '@/lib/utils'
 
-const categoryVariant = { methodology: 'gold', process: 'blue', ai_layer: 'purple', leadership: 'jade' }
+const SGF = { fontFamily: "'Schibsted Grotesk', system-ui, sans-serif" }
+
+const categoryColors = {
+  methodology: '#C7F24D',
+  process: '#C7F24D',
+  ai_layer: '#C7F24D',
+  leadership: '#C7F24D',
+}
 
 export default function InsightArticlePage() {
   const { slug } = useParams()
@@ -16,9 +21,9 @@ export default function InsightArticlePage() {
   if (!article) {
     return (
       <PublicLayout>
-        <div className="py-32 text-center">
-          <p className="text-muted">Article not found.</p>
-          <Link to="/insights" className="text-gold mt-4 inline-block">← Back to insights</Link>
+        <div className="py-32 text-center" style={{ ...SGF }}>
+          <p style={{ color: 'rgba(255,255,255,0.5)' }}>Article not found.</p>
+          <Link to="/insights" style={{ color: '#C7F24D', marginTop: 16, display: 'inline-block', ...SGF }}>← Back to insights</Link>
         </div>
       </PublicLayout>
     )
@@ -28,55 +33,76 @@ export default function InsightArticlePage() {
 
   return (
     <PublicLayout>
-      <article className="pt-24 pb-16 px-6">
-        <div className="max-w-2xl mx-auto">
-          <Link to="/insights" className="flex items-center gap-2 text-muted text-sm hover:text-ink mb-8 transition-colors">
+      <article style={{ paddingTop: 96, paddingBottom: 64, paddingLeft: 24, paddingRight: 24, background: '#0A0A0A' }}>
+        <div style={{ maxWidth: 672, margin: '0 auto' }}>
+          <Link to="/insights" style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'rgba(255,255,255,0.4)', fontSize: 14, textDecoration: 'none', marginBottom: 32, ...SGF }}>
             <ArrowLeft size={14} /> All insights
           </Link>
-          <div className="mb-6">
-            <Badge variant={categoryVariant[article.category] || 'default'}>{article.category.replace('_', ' ')}</Badge>
+          <div style={{ marginBottom: 24 }}>
+            <span style={{ background: 'rgba(199,242,77,0.1)', color: '#C7F24D', borderRadius: 999, padding: '4px 14px', fontSize: 12, fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              {article.category.replace('_', ' ')}
+            </span>
           </div>
-          <h1 className="font-display text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">{article.title}</h1>
-          <div className="flex items-center gap-3 text-sm text-muted mb-10 pb-10 border-b border-border">
+          <h1 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 800, color: '#FFFFFF', marginBottom: 16, lineHeight: 1.2, letterSpacing: '-0.02em', ...SGF }}>
+            {article.title}
+          </h1>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 14, color: 'rgba(255,255,255,0.3)', marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid rgba(255,255,255,0.08)', ...SGF }}>
             <span>{article.author}</span>
             <span>·</span>
             <span>{formatDate(article.published_date)}</span>
             <span>·</span>
             <span>{article.read_time_minutes} min read</span>
           </div>
-          <div className="prose max-w-none space-y-5 text-base leading-relaxed text-ink/80">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {paragraphs.map((p, i) => {
               if (p.startsWith('**') && p.endsWith('**')) {
-                return <h2 key={i} className="font-display text-xl font-bold text-ink mt-8 mb-3">{p.slice(2, -2)}</h2>
+                return <h2 key={i} style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', marginTop: 16, marginBottom: 4, ...SGF }}>{p.slice(2, -2)}</h2>
               }
               if (p.startsWith('— ')) {
-                return <p key={i} className="pl-4 border-l-4 border-gold/50 italic text-muted">{p.slice(2)}</p>
+                return <p key={i} style={{ paddingLeft: 16, borderLeft: '3px solid rgba(199,242,77,0.4)', fontStyle: 'italic', color: 'rgba(255,255,255,0.5)', fontSize: 16, lineHeight: 1.7, ...SGF }}>{p.slice(2)}</p>
               }
-              return <p key={i}>{p}</p>
+              return <p key={i} style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, ...SGF }}>{p}</p>
             })}
           </div>
         </div>
       </article>
 
-      <section className="py-16 px-6 bg-surface">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="font-display text-xl font-bold text-ink">More from Studio Method</h2>
-            <Link to="/insights" className="text-sm text-gold flex items-center gap-1">All articles <ArrowRight size={13} /></Link>
+      <section style={{ padding: '64px 24px', background: '#111111' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', ...SGF }}>More from Studio Method</h2>
+            <Link to="/insights" style={{ fontSize: 14, color: '#C7F24D', display: 'flex', alignItems: 'center', gap: 4, textDecoration: 'none', ...SGF }}>All articles <ArrowRight size={13} /></Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {related.map(a => <ArticleCard key={a.id} article={a} />)}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
+            {related.map(a => (
+              <Link
+                key={a.id}
+                to={`/insights/${a.slug}`}
+                style={{ display: 'flex', flexDirection: 'column', gap: 12, padding: 28, background: '#1A1A1A', borderRadius: 16, border: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none' }}
+              >
+                <span style={{ fontSize: 11, color: '#C7F24D', fontFamily: 'JetBrains Mono, monospace', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{a.category.replace('_', ' ')}</span>
+                <h3 style={{ fontSize: 17, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.35, ...SGF }}>{a.title}</h3>
+                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, ...SGF }}>{a.excerpt}</p>
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.2)', marginTop: 'auto', ...SGF }}>{a.read_time_minutes} min read</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-navy text-center">
-        <div className="max-w-xl mx-auto">
-          <h2 className="font-display text-2xl font-bold text-white mb-4">Enjoyed this article?</h2>
-          <p className="text-white/60 mb-8">Get new articles directly to your inbox. No marketing, just writing.</p>
-          <div className="flex gap-2 max-w-sm mx-auto">
-            <input type="email" placeholder="your@email.com" className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-gold" />
-            <button className="btn-gold px-5 py-3 rounded-lg text-sm">Subscribe</button>
+      <section style={{ padding: '64px 24px', background: '#1A1A1A', textAlign: 'center' }}>
+        <div style={{ maxWidth: 480, margin: '0 auto' }}>
+          <h2 style={{ fontSize: 24, fontWeight: 700, color: '#FFFFFF', marginBottom: 16, ...SGF }}>Enjoyed this article?</h2>
+          <p style={{ color: 'rgba(255,255,255,0.4)', marginBottom: 32, ...SGF }}>Get new articles directly to your inbox. No marketing, just writing.</p>
+          <div style={{ display: 'flex', gap: 8, maxWidth: 360, margin: '0 auto' }}>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              style={{ flex: 1, padding: '12px 16px', borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)', background: '#111111', color: '#FFFFFF', fontSize: 14, outline: 'none', ...SGF }}
+            />
+            <button style={{ background: '#C7F24D', color: '#0A0A0A', borderRadius: 12, padding: '12px 20px', fontWeight: 600, fontSize: 14, border: 'none', cursor: 'pointer', ...SGF }}>
+              Subscribe
+            </button>
           </div>
         </div>
       </section>
